@@ -13,7 +13,7 @@ case $choice in
     echo "Setting up Python environment..."
 
     # Install Python packages using pip
-    pip install numpy
+    pip install numpy pandas matplotlib requests Flask
 
     # Create and activate a Python virtual environment
     python -m venv myenv
@@ -24,8 +24,13 @@ case $choice in
     # Java environment setup
     echo "Setting up Java environment..."
 
-    # Add commands to set up the Java environment
-    # For example, you can install JDK, set up environment variables, or configure build tools
+    # Install OpenJDK
+    apt-get update
+    apt-get install -y openjdk-11-jdk
+
+    # Set up environment variables
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+    export PATH=$PATH:$JAVA_HOME/bin
 
     ;;
   *)
