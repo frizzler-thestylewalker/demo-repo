@@ -4,7 +4,8 @@ echo "Welcome to GitHub Code Spaces Environment Setup!"
 echo "Please select your desired environment:"
 echo "1. Python"
 echo "2. Java"
-echo -n "Enter your choice (1 or 2): "
+echo "3. Node.js"
+echo -n "Enter your choice (1, 2, or 3): "
 read choice
 
 case $choice in
@@ -31,6 +32,19 @@ case $choice in
     # Set up environment variables
     export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
     export PATH=$PATH:$JAVA_HOME/bin
+
+    ;;
+  3)
+    # Node.js environment setup
+    echo "Setting up Node.js environment..."
+
+    # Install Node.js using nvm (Node Version Manager)
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+    source ~/.nvm/nvm.sh
+    nvm install node
+
+    # Install global Node.js packages
+    npm install -g express nodemon
 
     ;;
   *)
