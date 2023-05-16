@@ -12,8 +12,12 @@ case $choice in
     # Python environment setup
     echo "Setting up Python environment..."
 
-    # Add commands to set up the Python environment
-    # For example, you can install necessary packages or create a virtual environment
+    # Install Python packages using pip
+    pip install numpy
+
+    # Create and activate a Python virtual environment
+    python -m venv myenv
+    source myenv/bin/activate
 
     ;;
   2)
